@@ -1,0 +1,108 @@
+{
+  "EDITOR_STATE": {
+    "allProjectFiles": {
+      "83962078-07bf-4a24-8b16-995056d5fe7a": {
+        "id": "83962078-07bf-4a24-8b16-995056d5fe7a",
+        "parent": null,
+        "name": "animal-reserve-sathira",
+        "type": "DIRECTORY",
+        "isDirectory": true,
+        "children": [
+          "6f75d1d0-c679-4ded-beb8-81620f8c5084"
+        ],
+        "isRemovable": false,
+        "filePath": "animal-reserve-sathira"
+      },
+      "6f75d1d0-c679-4ded-beb8-81620f8c5084": {
+        "id": "6f75d1d0-c679-4ded-beb8-81620f8c5084",
+        "parent": "83962078-07bf-4a24-8b16-995056d5fe7a",
+        "name": "recognizer.js",
+        "type": "JS_LAMBDA",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "animal-reserve-sathira/recognizer.js",
+        "code": "exports.handler = function(event, context, callback) {\n    console.log(JSON.stringify(event,null,2));\n    callback(null, {\"message\": \"Successfully executed\"});\n}",
+        "config": {
+          "runtime": "nodejs8.10",
+          "handler": "handler",
+          "timeout": 60,
+          "memory": 128,
+          "layers": []
+        },
+        "triggers": [
+          {
+            "resourceName": "s3slpTestSathira",
+            "config": {
+              "type": "s3:ObjectCreated:*",
+              "keyPrefix": "",
+              "keySuffix": ""
+            }
+          }
+        ],
+        "testCases": {
+          "b62fdd59-31f9-42e7-b035-d18b33533165": {
+            "id": "b62fdd59-31f9-42e7-b035-d18b33533165",
+            "name": "Test",
+            "functionId": "6f75d1d0-c679-4ded-beb8-81620f8c5084",
+            "event": "{\n    \"key1\": \"value1\",\n    \"key2\": \"value2\",\n    \"key3\": \"value3\"\n}"
+          }
+        }
+      }
+    },
+    "deletedFiles": [
+      "animal-reserve-sathira/lambda.js"
+    ],
+    "rootNode": "83962078-07bf-4a24-8b16-995056d5fe7a",
+    "openFiles": [
+      "6f75d1d0-c679-4ded-beb8-81620f8c5084"
+    ],
+    "currentFileId": "6f75d1d0-c679-4ded-beb8-81620f8c5084",
+    "resources": {
+      "s3slpTestSathira": {
+        "name": "s3slpTestSathira",
+        "type": "S3",
+        "config": {
+          "mode": 1,
+          "bucket": {
+            "region": "us-east-1",
+            "name": "slp-test-sathira"
+          }
+        }
+      }
+    },
+    "customTemplate": {
+      "dialect": null,
+      "definitions": {}
+    },
+    "envVariables": [
+      {
+        "lambdaId": "all",
+        "varKey": "SIGMA_AWS_ACC_ID",
+        "varValue": null,
+        "shouldPersist": false,
+        "displayOnly": false,
+        "editable": false
+      }
+    ],
+    "packageJSON": {
+      "dependencies": {}
+    }
+  },
+  "PROJECT_META": {
+    "projectName": "animal-reserve-sathira",
+    "projectDescription": "Detect and record Safari Animals",
+    "projectVersion": "1.0.0",
+    "projectRegion": "us-east-1",
+    "platform": "AWS",
+    "platformRegions": {},
+    "lastSave": 1573109405217
+  },
+  "VCS_STATE": {
+    "provider": "GitHub",
+    "repo": {
+      "name": "animal-reserve-sathira",
+      "url": "https://github.com/sathiranipun/animal-reserve-sathira"
+    }
+  }
+}
